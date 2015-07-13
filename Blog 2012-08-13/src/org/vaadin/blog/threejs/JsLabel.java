@@ -1,6 +1,5 @@
 package org.vaadin.blog.threejs;
 
-import com.google.gwt.user.client.Window;
 
 @SuppressWarnings("serial")
 @com.vaadin.annotations.JavaScript({ "js_label.js" })

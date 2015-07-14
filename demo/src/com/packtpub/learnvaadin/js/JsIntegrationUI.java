@@ -10,7 +10,7 @@ import com.vaadin.ui.UI;
 @SuppressWarnings("serial")
 public class JsIntegrationUI extends UI {
 
-	@WebServlet(value = "/*", asyncSupported = true)
+	@WebServlet(value = "/*", asyncSupported = false)
 	@VaadinServletConfiguration(productionMode = false, ui = JsIntegrationUI.class, widgetset = "com.packtpub.learnvaadin.js.JavascriptWidgetset")
 	public static class Servlet extends VaadinServlet {
 		

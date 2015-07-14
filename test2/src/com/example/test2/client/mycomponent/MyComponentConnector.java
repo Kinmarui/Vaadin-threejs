@@ -3,23 +3,21 @@ package com.example.test2.client.mycomponent;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
-
 import com.vaadin.client.ui.AbstractComponentConnector;
 import com.vaadin.shared.ui.Connect;
-
 import com.example.test2.MyComponent;
-import com.example.test2.client.mycomponent.MyComponentWidget;
-import com.example.test2.client.mycomponent.MyComponentServerRpc;
 import com.vaadin.client.communication.RpcProxy;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.vaadin.shared.MouseEventDetails;
 import com.vaadin.client.MouseEventDetailsBuilder;
 import com.example.test2.client.mycomponent.MyComponentClientRpc;
+import com.example.test2.client.mycomponent.MyComponentServerRpc;
 import com.example.test2.client.mycomponent.MyComponentState;
+import com.example.test2.client.mycomponent.MyComponentWidget;
 import com.vaadin.client.communication.StateChangeEvent;
 
-@Connect(MyComponent.class)
+//@Connect(MyComponent.class)
 public class MyComponentConnector extends AbstractComponentConnector {
 
 	MyComponentServerRpc rpc = RpcProxy
@@ -60,14 +58,14 @@ public class MyComponentConnector extends AbstractComponentConnector {
 		return (MyComponentState) super.getState();
 	}
 
-	@Override
-	public void onStateChanged(StateChangeEvent stateChangeEvent) {
-		super.onStateChanged(stateChangeEvent);
-
-		// TODO do something useful
-		final String text = getState().text;
-		getWidget().setText(text);
-	}
+//	@Override
+//	public void onStateChanged(StateChangeEvent stateChangeEvent) {
+//		super.onStateChanged(stateChangeEvent);
+//
+//		// TODO do something useful
+//		final String text = getState().text;
+//		getWidget().setText(text);
+//	}
 
 }
 

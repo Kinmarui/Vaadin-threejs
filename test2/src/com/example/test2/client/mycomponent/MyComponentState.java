@@ -1,6 +1,8 @@
 package com.example.test2.client.mycomponent;
 
-public class MyComponentState extends com.vaadin.shared.AbstractComponentState {
+import com.vaadin.shared.ui.JavaScriptComponentState;
+
+public class MyComponentState extends JavaScriptComponentState{
 
 	// TODO example state
 	public String text = "This is MyComponent";

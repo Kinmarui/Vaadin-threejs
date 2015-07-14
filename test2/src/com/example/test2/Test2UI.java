@@ -2,13 +2,19 @@ package com.example.test2;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.google.gwt.core.linker.IFrameLinker;
+import com.google.gwt.dom.client.IFrameElement;
 import com.google.gwt.user.client.Window;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.Resource;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Embedded;
+import com.vaadin.ui.Grid;
 import com.vaadin.ui.JavaScript;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
@@ -30,6 +36,21 @@ public class Test2UI extends UI {
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
 		setContent(layout);
+//		Button scene = new Button("<iframe src=http://get.webgl.org/ style=\"width: 100%; height: 100%\"></iframe>");
+//    	layout.addComponent(scene);
+		
+		Grid grid = new Grid();
+		grid.setId("asdf");
+		grid.setHeight(1, UNITS_PIXELS);
+		grid.setWidth(1, UNITS_PIXELS);
+		layout.addComponent(grid);
+		
+    	JavaScript.getCurrent().execute("		"
+    			+ "var container = document.getElementById('asdf');"
+    			+ "var iframe = document.createElement(\"iframe\");"
+    			+ "iframe.src = \"http://get.webgl.org/\";"
+    			+ "container.appendChild( iframe );");
+    			
 
 		Button button = new Button("Click Me");
 		button.addClickListener(new Button.ClickListener() {
@@ -58,8 +79,8 @@ public class Test2UI extends UI {
 						"\r\n" + 
 						"\r\n" + 
 						"			function init() {\r\n" + 
-						"				container = document.createElement( 'div' );\r\n" + 
-						"				document.body.appendChild( container );\r\n" + 
+						"				container = document.getElementById('asdf') // document.createElement( 'div' );\r\n" + 
+						"				//document.body.appendChild( container );\r\n" + 
 						"\r\n" + 
 						"				camera = new THREE.PerspectiveCamera( fov, window.innerWidth / window.innerHeight, 1, 1000 );\r\n" + 
 						"				camera.position.z = 0;\r\n" + 
@@ -92,7 +113,7 @@ public class Test2UI extends UI {
 						"\r\n" + 
 						"				var loader = new THREE.OBJMTLLoader();\r\n" + 
 						"				// loader.load( 'obj/male02/male02.obj', 'obj/male02/male02_dds.mtl', function ( object ) {\r\n" + 
-						"				loader.load( 'my_model_tasmy.obj', 'my_model_tasmy.mtl', function ( object ) {\r\n" + 
+						"				loader.load( 'http://localhost/treejs/my_model_tasmy.obj', 'http://localhost/treejs//my_model_tasmy.mtl', function ( object ) {\r\n" + 
 						"				// loader.load( 'model_tasmy_23_6_2014.obj', 'model_tasmy_23_6_2014.mtl', function ( object ) {\r\n" + 
 						"\r\n" + 
 						"				// var loader = new THREE.ColladaLoader();\r\n" + 
@@ -233,9 +254,9 @@ public class Test2UI extends UI {
 			}
 		});
 		
-		layout.addComponent(button);
+//		layout.addComponent(button);
 		
-		layout.addComponent(new MyComponent());
+//		layout.addComponent(new MyComponent());
 	}
 
 }

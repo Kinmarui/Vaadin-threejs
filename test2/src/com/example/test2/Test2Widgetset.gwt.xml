@@ -22,5 +22,5 @@
      information and instructions.
     -->
     <!-- <set-configuration-property name="devModeRedirectEnabled" value="true" /> -->
-
+	<set-property name="user.agent" value="safari"/>
 </module>

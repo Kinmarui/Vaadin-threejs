@@ -4,3 +4,8 @@ test2/.classpath
 test2/.settings/
 test2/build/
 test2/WebContent/VAADIN/widgetsets/
+*/.settings/
+*/.project
+*/.classpath
+*.log
+*/WebContent/VAADIN/widgetsets/*

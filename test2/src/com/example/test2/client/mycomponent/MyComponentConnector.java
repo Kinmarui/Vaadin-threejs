@@ -5,7 +5,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 import com.vaadin.client.ui.AbstractComponentConnector;
 import com.vaadin.shared.ui.Connect;
-import com.example.test2.MyComponent;
+import com.example.test2.MyJavaScripExtension;
 import com.vaadin.client.communication.RpcProxy;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

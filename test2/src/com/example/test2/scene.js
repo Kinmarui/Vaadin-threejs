@@ -1,4 +1,4 @@
-window.com_example_test2_MyComponent = function() {
+window.com_example_test2_MyJavaScriptComponent = function() {
 
 	var container, stats;
 
